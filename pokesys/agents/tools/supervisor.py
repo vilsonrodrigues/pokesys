@@ -61,12 +61,12 @@ def get_pokemon_lore(pokemon_name: str) -> Dict[str, str]:
     evolution_chain = extract_evolution_chain(evolution_data["chain"])
 
     # Assemble the lore text
-    lore = f"Pokémon Lore: {pokemon_name.capitalize()}\n"
+    lore = f"Pokemon Lore: {pokemon_name.capitalize()}\n"
     lore += f"Status: {status}\n"
     lore += f"Habitat: {habitat}\n"
     lore += f"Generation: {generation}\n"
-    lore += f"Evolution Chain: {" -> ".join(name.capitalize() for name in evolution_chain)}\n\n"
-    lore += "Pokédex Entries:\n"
+    lore += f"Evolution Chain: {' -> '.join(name.capitalize() for name in evolution_chain)}\n\n"
+    lore += "Pokedex Entries:\n"
     for _, entry in enumerate(unique_texts[:3]):  # Limit to 3 entries
         lore += f"  - {entry}\n"
     response = {"answer": lore}
