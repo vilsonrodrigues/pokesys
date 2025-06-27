@@ -14,3 +14,11 @@ dependencies = [
     "pydantic-settings>=2.10.1",
     "uvicorn>=0.34.3",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.0.0",
+    "pytest-mock>=3.14.1",
+    "requests-mock>=1.12.1",
+]

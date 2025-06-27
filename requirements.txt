@@ -7,6 +7,7 @@ anyio==4.9.0
     #   httpx
     #   openai
     #   starlette
+    #   watchfiles
 certifi==2025.6.15
     # via
     #   httpcore
@@ -15,11 +16,20 @@ certifi==2025.6.15
 charset-normalizer==3.4.2
     # via requests
 click==8.2.1
-    # via uvicorn
+    # via
+    #   rich-toolkit
+    #   typer
+    #   uvicorn
 distro==1.9.0
     # via openai
+dnspython==2.7.0
+    # via email-validator
+email-validator==2.2.0
+    # via fastapi
 fastapi==0.115.14
     # via pokesys (pyproject.toml)
+fastapi-cli==0.0.7
+    # via fastapi
 greenlet==3.2.3
     # via sqlalchemy
 h11==0.16.0
@@ -28,16 +38,24 @@ h11==0.16.0
     #   uvicorn
 httpcore==1.0.9
     # via httpx
+httptools==0.6.4
+    # via uvicorn
 httpx==0.28.1
     # via
+    #   fastapi
     #   langgraph-sdk
     #   langsmith
     #   openai
 idna==3.10
     # via
     #   anyio
+    #   email-validator
     #   httpx
     #   requests
+itsdangerous==2.2.0
+    # via fastapi
+jinja2==3.1.6
+    # via fastapi
 jiter==0.10.0
     # via openai
 jsonpatch==1.33
@@ -79,12 +97,19 @@ langsmith==0.4.3
     # via
     #   langchain
     #   langchain-core
+markdown-it-py==3.0.0
+    # via rich
+markupsafe==3.0.2
+    # via jinja2
+mdurl==0.1.2
+    # via markdown-it-py
 openai==1.92.2
     # via
     #   pokesys (pyproject.toml)
     #   langchain-openai
 orjson==3.10.18
     # via
+    #   fastapi
     #   langgraph-sdk
     #   langsmith
 ormsgpack==1.10.0
@@ -101,17 +126,30 @@ pydantic==2.11.7
     #   langgraph
     #   langsmith
     #   openai
+    #   pydantic-extra-types
     #   pydantic-settings
 pydantic-core==2.33.2
     # via pydantic
+pydantic-extra-types==2.10.5
+    # via fastapi
 pydantic-settings==2.10.1
-    # via pokesys (pyproject.toml)
+    # via
+    #   pokesys (pyproject.toml)
+    #   fastapi
+pygments==2.19.2
+    # via rich
 python-dotenv==1.1.1
-    # via pydantic-settings
+    # via
+    #   pydantic-settings
+    #   uvicorn
+python-multipart==0.0.20
+    # via fastapi
 pyyaml==6.0.2
     # via
+    #   fastapi
     #   langchain
     #   langchain-core
+    #   uvicorn
 regex==2024.11.6
     # via tiktoken
 requests==2.32.4
@@ -122,6 +160,14 @@ requests==2.32.4
     #   tiktoken
 requests-toolbelt==1.0.0
     # via langsmith
+rich==14.0.0
+    # via
+    #   rich-toolkit
+    #   typer
+rich-toolkit==0.14.7
+    # via fastapi-cli
+shellingham==1.5.4
+    # via typer
 sniffio==1.3.1
     # via
     #   anyio
@@ -136,6 +182,8 @@ tiktoken==0.9.0
     # via langchain-openai
 tqdm==4.67.1
     # via openai
+typer==0.16.0
+    # via fastapi-cli
 typing-extensions==4.14.0
     # via
     #   anyio
@@ -144,16 +192,30 @@ typing-extensions==4.14.0
     #   openai
     #   pydantic
     #   pydantic-core
+    #   pydantic-extra-types
+    #   rich-toolkit
     #   sqlalchemy
+    #   typer
     #   typing-inspection
 typing-inspection==0.4.1
     # via
     #   pydantic
     #   pydantic-settings
+ujson==5.10.0
+    # via fastapi
 urllib3==2.5.0
     # via requests
 uvicorn==0.34.3
-    # via pokesys (pyproject.toml)
+    # via
+    #   pokesys (pyproject.toml)
+    #   fastapi
+    #   fastapi-cli
+uvloop==0.21.0
+    # via uvicorn
+watchfiles==1.1.0
+    # via uvicorn
+websockets==15.0.1
+    # via uvicorn
 xxhash==3.5.0
     # via langgraph
 zstandard==0.23.0
