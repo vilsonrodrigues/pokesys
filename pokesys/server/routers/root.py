@@ -5,4 +5,4 @@ router = APIRouter()
 
 @router.get("/", tags=["app"])
 async def root():
-    return {"message": "Pokémon AI System is runningx"}
+    return {"message": "PokeSys is running"}
