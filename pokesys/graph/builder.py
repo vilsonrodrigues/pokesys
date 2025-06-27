@@ -21,8 +21,7 @@ def build_graph() -> StateGraph:
         prompt=SUPERVISOR_SYSTEM_PROMPT,
         #tools=SUPERVISOR_TOOLS,
         response_format=SupervisorResponse,
-    )
-    workflow.compile()
+    ).compile()
     return workflow
 
 graph = build_graph()
