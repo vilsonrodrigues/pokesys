@@ -19,7 +19,7 @@ def build_graph() -> StateGraph:
         agents=[researcher_agent, expert_agent],
         model=get_llm(),
         prompt=SUPERVISOR_SYSTEM_PROMPT,
-        #tools=SUPERVISOR_TOOLS,
+        tools=SUPERVISOR_TOOLS,
         response_format=SupervisorResponse,
     ).compile()
     return workflow
