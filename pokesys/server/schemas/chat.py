@@ -7,7 +7,7 @@ class ChatRequest(BaseModel):
     question: str
 
 
-class ChatResponse(BaseModel):
+class ChatDefaultResponse(BaseModel):
     """Response model for chat endpoint."""
     reasoning: Optional[str] = Field(None, description="Reasoning behind the answer")
     answer: str
@@ -23,13 +23,7 @@ class PokemonStats(BaseModel):
     speed: int
 
 
-class PokemonStatsResponse(BaseModel):
+class ChatPokemonStatsResponse(BaseModel):
     """Model response for Pokemon data."""
     name: str
     base_stats: PokemonStats
-
-
-class BattleResponse(BaseModel):
-    """Model response for Battle."""
-    reasoning: str = Field(..., description="Reasoning for why this Pokemon was the winner")
-    winner: str = Field(..., description="Name of the winning Pokemon")
