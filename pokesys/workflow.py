@@ -1,3 +1,4 @@
+import json
 from pokesys.graph.builder import graph
 
 
@@ -13,5 +14,6 @@ async def run_workflow_async(question: str):
     if not question:
         raise ValueError("Input could not be empty")
 
-    response = await graph.ainvoke({"messages": [{"role": "user", "content": question}]})
+    output = await graph.ainvoke({"messages": [{"role": "user", "content": question}]})
+    response = json.loads(output["messages"][-1].content)
     return response    
