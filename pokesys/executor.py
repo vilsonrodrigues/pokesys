@@ -43,8 +43,6 @@ class Executor:
     def shutdown(self):
         """Shutdown the executor, closing the pools."""
         self.thread_pool.shutdown()
-        for worker in self.async_workers:
-            worker.shutdown()
 
     def __del__(self):
         self.shutdown()
